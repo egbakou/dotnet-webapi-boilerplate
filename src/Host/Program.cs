@@ -31,3 +31,5 @@ finally
     Log.Information("Server Shutting down...");
     Log.CloseAndFlush();
 }
+
+public partial class Program { }
