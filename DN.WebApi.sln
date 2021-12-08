@@ -51,7 +51,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E63DB355
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Test", "tests\Infrastructure.Test\Infrastructure.Test.csproj", "{56278085-6921-4F93-A64B-DE6BEBFB6F24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host.IntegrationTests", "tests\Host.IntegrationTests\Host.IntegrationTests.csproj", "{0718C7C8-DF7B-4C4D-8E22-978D8C6D926B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host.IntegrationTests", "tests\Host.IntegrationTests\Host.IntegrationTests.csproj", "{0718C7C8-DF7B-4C4D-8E22-978D8C6D926B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
