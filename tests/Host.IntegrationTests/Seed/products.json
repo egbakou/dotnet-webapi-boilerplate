@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "ca43337c-c9bc-4c18-98e1-3bf8694f9fb0",
+    "Name": "Galaxy S20 Ultra 5G",
+    "Description": "Sample description",
+    "Rate": 10,
+    "ImagePath": "image.png",
+    "BrandId": "538f5ce7-9bd4-4309-8e62-6e566b01fdfe",
+    "Tenant": "root"
+  },
+  {
+    "Id": "ca43337c-c9bc-4c18-98e1-3bf8694f9fb1",
+    "Name": "Samsung Galaxy Note20 Ultra",
+    "Description": "Sample description",
+    "Rate": 10,
+    "ImagePath": "image.png",
+    "BrandId": "538f5ce7-9bd4-4309-8e62-6e566b01fdfe",
+    "Tenant": "root"
+  },
+  {
+    "Id": "ca43337c-c9bc-4c18-98e1-3bf8694f9fb2",
+    "Name": "Iphone 11 Pro",
+    "Description": "Sample description",
+    "Rate": 10,
+    "ImagePath": "image.png",
+    "BrandId": "d72ee823-f4e6-43c4-84b5-0e27f8c290f2",
+    "Tenant": "root"
+  },
+  {
+    "Id": "ca43337c-c9bc-4c18-98e1-3bf8694f9fb3",
+    "Name": "Iphone 12 Pro",
+    "Description": "Sample description",
+    "Rate": 10,
+    "ImagePath": "image.png",
+    "BrandId": "d72ee823-f4e6-43c4-84b5-0e27f8c290f2",
+    "Tenant": "root"
+  }
+]
