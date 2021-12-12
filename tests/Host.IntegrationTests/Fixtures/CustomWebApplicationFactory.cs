@@ -1,4 +1,5 @@
-﻿using DN.WebApi.Infrastructure.Persistence.Contexts;
+﻿using DN.WebApi.Infrastructure.Multitenancy;
+using DN.WebApi.Infrastructure.Persistence.Contexts;
 using Host.IntegrationTests.Utils;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -34,6 +35,8 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
 
                 services.AddInMemoryTenantManagementDbContext();
                 services.AddInMemoryApplicationDbContext();
+
+                services.AddJwtMockAuthentication();
 
                 // Build the service provider
                 var sp = services.BuildServiceProvider();
