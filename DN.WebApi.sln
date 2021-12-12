@@ -48,9 +48,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E63DB355-B283-460C-87E9-68A8E831ADCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Test", "tests\Infrastructure.Test\Infrastructure.Test.csproj", "{56278085-6921-4F93-A64B-DE6BEBFB6F24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Test", "tests\Infrastructure.Test\Infrastructure.Test.csproj", "{56278085-6921-4F93-A64B-DE6BEBFB6F24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrators.Oracle", "src\Migrators\Migrators.Oracle\Migrators.Oracle.csproj", "{E860D5C5-7E42-438D-AD3E-8CDCD80F49FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Migrators.Oracle", "src\Migrators\Migrators.Oracle\Migrators.Oracle.csproj", "{E860D5C5-7E42-438D-AD3E-8CDCD80F49FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
