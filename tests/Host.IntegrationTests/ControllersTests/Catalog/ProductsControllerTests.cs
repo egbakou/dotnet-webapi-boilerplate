@@ -32,7 +32,7 @@ public class ProductsControllerTests : BaseControllerTests
         // Act
         var result = await _client.GetAsync($"/v1/products/{productId}");
 
-        // Asset
+        // Assert
         result.StatusCode.ShouldBe(System.Net.HttpStatusCode.OK);
     }
 }
