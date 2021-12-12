@@ -13,7 +13,7 @@ public class ProductsControllerTests : BaseControllerTests
     }
 
     [Fact]
-    public async Task GetAsync_Without_Login_Should_Throw_Not_Authorized()
+    public async Task GetAsync_Should_Return_OK()
     {
         // Arrange
         var productId = "623e0000-3f5a-3c7c-0502-08d9b2523534";
