@@ -12,10 +12,15 @@ public static class ServiceCollectionsExtensions
 {
     public static void RemoveService(this IServiceCollection services, Type serviceType)
     {
-        var descriptor = services.SingleOrDefault(s => s.ServiceType == serviceType);
+        var descriptors = services.Where(s => s.ServiceType == serviceType).ToList();
 
-        if (descriptor != null)
-            services.Remove(descriptor);
+        if (descriptors != null)
+        {
+            foreach (var descriptor in descriptors)
+            {
+                services.Remove(descriptor);
+            }
+        }
     }
 
     public static void AddInMemoryTenantManagementDbContext(this IServiceCollection services)
