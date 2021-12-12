@@ -1,6 +1,4 @@
-﻿using DN.WebApi.Infrastructure.Identity.Models;
-using DN.WebApi.Infrastructure.Persistence.Contexts;
-using Host.IntegrationTests.Mocks;
+﻿using DN.WebApi.Infrastructure.Persistence.Contexts;
 using Host.IntegrationTests.Utils;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -22,8 +20,6 @@ namespace Host.IntegrationTests.Fixtures;
 public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>
     where TStartup : class
 {
-    public IConfiguration? Configuration { get; private set; }
-
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Testing");
@@ -33,30 +29,11 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
             {
                 services.AddEntityFrameworkInMemoryDatabase();
 
-                // Create a new service provider.
-                var provider = services
-                    .AddEntityFrameworkInMemoryDatabase()
-                    .BuildServiceProvider();
-
                 services.RemoveService(typeof(DbContextOptions<TenantManagementDbContext>));
                 services.RemoveService(typeof(DbContextOptions<ApplicationDbContext>));
 
                 services.AddInMemoryTenantManagementDbContext();
                 services.AddInMemoryApplicationDbContext();
-
-                services.AddJwtMockAuthentication();
-                var user = new ApplicationUser
-                {
-                    Id = "43d7aab7-4136-4842-9a78-bb13c5ad49bc",
-                    Email = "admin@root.com",
-                    FirstName = "root",
-                    LastName = "Admin",
-                    Tenant = "root",
-                    UserName = "root.admin"
-
-                };
-                var mockedUser = new MockAuthUser(TokenServiceMock.GetClaims(user, "127.0.0.1").ToArray());
-                services.AddScoped(_ => mockedUser);
 
                 // Build the service provider
                 var sp = services.BuildServiceProvider();
@@ -72,13 +49,8 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
             })
             .ConfigureAppConfiguration((_, configureDelegate) =>
             {
-                Configuration = new ConfigurationBuilder()
-                .AddJsonFile("integrationsettings.json")
-                .Build();
                 configureDelegate.SetBasePath(Directory.GetCurrentDirectory());
                 configureDelegate.AddJsonFile("integrationsettings.json");
-
-                configureDelegate.AddConfiguration(Configuration);
             })
             .UseSerilog((_, serilog) =>
             {
