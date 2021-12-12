@@ -21,6 +21,8 @@ public static class DatabaseInitializer
         using var scope = serviceProvider.CreateScope();
 
         var dbContext = scope.ServiceProvider.GetRequiredService<TenantManagementDbContext>();
+        if (dbContext.Database.ProviderName == "Microsoft.EntityFrameworkCore.InMemory")
+            return;
 
         if (dbContext.Database.GetPendingMigrations().Any())
         {
