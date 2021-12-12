@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 
 namespace Host.IntegrationTests.Utils;
 
@@ -53,13 +52,8 @@ public static class ServiceCollectionsExtensions
                 bearer.SaveToken = true;
                 bearer.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuerSigningKey = false,
                     IssuerSigningKey = TokenServiceMock.SecurityKey,
-                    ValidateIssuer = false,
-                    ValidateLifetime = true,
                     ValidateAudience = false,
-                    RoleClaimType = ClaimTypes.Role,
-                    ClockSkew = TimeSpan.Zero
                 };
             });
     }

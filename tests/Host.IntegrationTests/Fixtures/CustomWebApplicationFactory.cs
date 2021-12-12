@@ -1,5 +1,4 @@
-﻿using DN.WebApi.Infrastructure.Multitenancy;
-using DN.WebApi.Infrastructure.Persistence.Contexts;
+﻿using DN.WebApi.Infrastructure.Persistence.Contexts;
 using Host.IntegrationTests.Utils;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
