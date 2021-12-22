@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace Host.IntegrationTests.Mocks;
 
@@ -18,8 +19,8 @@ public static class TokenServiceMock
 
     static TokenServiceMock()
     {
-        _rng.GetBytes(_key);
-        SecurityKey = new SymmetricSecurityKey(_key) { KeyId = Guid.NewGuid().ToString() };
+        byte[] secret = Encoding.UTF8.GetBytes("S0M3RAN0MS3CR3T!1!MAG1C!1!");
+        SecurityKey = new SymmetricSecurityKey(secret);
         SigningCredentials = new SigningCredentials(SecurityKey, SecurityAlgorithms.HmacSha256);
     }
 
